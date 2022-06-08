@@ -5,12 +5,7 @@ var scheduleItems = [];
 
 const currentDay = document.getElementById("currentDay")
 
-setInterval(()=>{
-    const now = moment().format('LLLL');
-    
 
-    currentDay.textContent = now;
-}, 1000);
 
 var textColorChanger = function(){
     if (mainClock < 9){
@@ -68,7 +63,13 @@ var textColorChanger = function(){
     }
     
 }
-textColorChanger();
+setInterval(()=>{
+    const now = moment().format('LLLL');
+    
+    textColorChanger();
+    currentDay.textContent = now;
+}, 1000);
+
 
 // switch(mainClock) {
 //     case 1:
